@@ -106,30 +106,30 @@
 <script>
     const weeks = [
         { num: 1, theme: "Foundation & Movement", exercises: [
-            { name: "Jumping Jacks", note: "or Step Jacks", beg: "80", int: "150", adv: "250"},
-            { name: "Bodyweight Squats", note: "", beg: "30", int: "60", adv: "100" },
-            { name: "Push-Ups", note: "or Knee Push-Ups", beg: "20", int: "45", adv: "75" },
-            { name: "Glute Bridges", note: "", beg: "30", int: "60", adv: "100" },
-            { name: "Plank Hold", note: "", beg: "40s", int: "75s", adv: "120s" },
+            { name: "Jumping Jacks", note: "or Step Jacks", beg: "80", int: "150", adv: "200", link: "https://musclewiki.com/exercise/cardio-jumping-jacks?model=f" }, 
+            { name: "Bodyweight Squats", note: "", beg: "30", int: "60", adv: "100", link: "https://musclewiki.com/exercise/bodyweight-squat?model=f" },
+            { name: "Push-Ups", note: "or Knee Push-Ups", beg: "20", int: "45", adv: "75", link: "https://musclewiki.com/exercise/push-up?model=f" },
+            { name: "Glute Bridges", note: "", beg: "30", int: "60", adv: "100", link: "https://musclewiki.com/exercise/bodyweight-feet-elevated-glute-bridge?model=f" },
+            { name: "Plank Hold", note: "", beg: "40s", int: "75s", adv: "120s", link: "https://musclewiki.com/exercise/forearm-plank?model=f" },
         ]},
         { num: 2, theme: "Core & Cardio", exercises: [
-            { name: "High Knees", note: "each leg", beg: "50", int: "100", adv: "160" },
-            { name: "Sit-Ups", note: "or Crunches", beg: "30", int: "60", adv: "100" },
-            { name: "Mountain Climbers", note: "each leg", beg: "40", int: "80", adv: "130" },
-            { name: "Side Plank", note: "each side", beg: "30s", int: "50s", adv: "80s" },
-            { name: "Jump Squats", note: "or Squat Pulses", beg: "20", int: "40", adv: "70" },
+            { name: "High Knees", note: "each leg", beg: "50", int: "100", adv: "160", link: "https://musclewiki.com/exercise/cardio-knee-taps?model=f" },
+            { name: "Sit-Ups", note: "or Crunches x 2 Reps", beg: "20", int: "30", adv: "50", link: "https://musclewiki.com/exercise/bodyweight-situp?model=f" },
+            { name: "Core Combo", note: "1m Climbers - 30s Planks - 30s Knees to elbows", beg: "3", int: "5", adv: "10", link:"" },
+            { name: "Side Plank", note: "each side", beg: "30s", int: "50s", adv: "80s", link: "https://musclewiki.com/exercise/hand-side-plank?model=f" },
+            { name: "In & Out Squats", note: "1 in & 1 Out = 1 Rep", beg: "20", int: "40", adv: "70", link: "https://musclewiki.com/exercise/in-and-out-jump-squat?model=f" },
         ]},
         { num: 3, theme: "Lower Body Focus", exercises: [
-            { name: "Reverse Lunges", note: "each leg", beg: "20", int: "40", adv: "65" },
-            { name: "Wall Sit", note: "", beg: "45s", int: "90s", adv: "150s" },
-            { name: "Calf Raises", note: "slow & controlled", beg: "60", int: "100", adv: "160" },
-            { name: "Sumo Squats", note: "", beg: "30", int: "60", adv: "100" },
-            { name: "Step-Ups", note: "use a chair/bench", beg: "20", int: "40", adv: "70" },
+            { name: "Side Lunges", note: "each leg", beg: "20", int: "40", adv: "65", link: "https://musclewiki.com/exercise/side-lunges?model=f" },
+            { name: "Wall Sit", note: "", beg: "45s", int: "90s", adv: "150s", link: "https://musclewiki.com/exercise/wall-sit?model=f" },
+            { name: "Calf Raises", note: "slow & controlled", beg: "60", int: "100", adv: "160", link: "https://musclewiki.com/exercise/calf-raises?model=f?model=f" },
+            { name: "Glutes 3 in 1", note: "each movement - each side", beg: "10", int: "20", adv: "30", link: "https://www.instagram.com/reel/DXErQmyDGvo/?igsh=MTRrZmgyYjhrNmhhZA%3D%3D" },
+            { name: "Step-Ups", note: "use a chair/bench - Weights or not", beg: "20", int: "40", adv: "70", link: "https://musclewiki.com/exercise/kettlebell-step-up?model=f" },
         ]},
         { num: 4, theme: "Upper Body & Stability", exercises: [
             { name: "Push-Up Hold", note: "at lowest point", beg: "30s", int: "60s", adv: "90s" },
-            { name: "Triceps Dips", note: "chair or bench", beg: "25", int: "50", adv: "80" },
-            { name: "Incline Push-Ups", note: "", beg: "20", int: "40", adv: "65" },
+            { name: "Triceps Dips", note: "chair, bench or Machine", beg: "25", int: "50", adv: "80", link: "https://musclewiki.com/exercise/bench-dips?model=f?model=f" },
+            { name: "Incline Push-Ups", note: "Or decline", beg: "20", int: "40", adv: "65", link: "https://musclewiki.com/exercise/incline-push-up?model=f?model=f" },
             { name: "Shoulder Taps", note: "in plank", beg: "30", int: "60", adv: "100" },
             { name: "Dead Bug", note: "slow & controlled", beg: "20", int: "40", adv: "65" },
         ]},
@@ -145,7 +145,7 @@
             { name: "Leg Raises", note: "lying flat", beg: "20", int: "45", adv: "75" },
             { name: "Plank Up-Downs", note: "elbow to hand", beg: "15", int: "30", adv: "50" },
             { name: "Superman Hold", note: "", beg: "45s", int: "75s", adv: "120s" },
-            { name: "L-Sit / Tuck Sit", note: "floor or chair", beg: "20s", int: "45s", adv: "75s" },
+            { name: "Plank Shoulder Tap to Pushups", note: "or not Pushups", beg: "45s", int: "120s", adv: "180s" },
         ]},
         { num: 7, theme: "Power & Athleticism", exercises: [
             { name: "Squat Jumps", note: "full depth", beg: "30", int: "55", adv: "90" },
@@ -197,47 +197,46 @@
     }
 
     function render() {
-        const grid = document.getElementById('challengeGrid');
-        const links = JSON.parse(localStorage.getItem(STORAGE_LINKS) || "{}");
-        const done = JSON.parse(localStorage.getItem(STORAGE_DONE) || "{}");
-        grid.innerHTML = "";
+    const grid = document.getElementById('challengeGrid');
+    const localLinks = JSON.parse(localStorage.getItem(STORAGE_LINKS) || "{}"); // Saved in browser
+    const done = JSON.parse(localStorage.getItem(STORAGE_DONE) || "{}");
+    grid.innerHTML = "";
 
-        let totalEx = 0;
-        let completedEx = 0;
-
-        weeks.forEach(week => {
-            const card = document.createElement('div');
-            card.className = 'week-card';
+    weeks.forEach(week => {
+        const card = document.createElement('div');
+        card.className = 'week-card';
+        
+        const rowsHtml = week.exercises.map((ex, idx) => {
+            const key = getKey(week.num, idx);
             
-            const rowsHtml = week.exercises.map((ex, idx) => {
-                totalEx++;
-                const key = getKey(week.num, idx);
-                const link = links[key] || "";
-                const isDone = !!done[key];
-                if(isDone) completedEx++;
+            // FIXED: Look for hardcoded "ex.link" if local storage is empty
+            const link = localLinks[key] || ex.link || ""; 
+            
+            const isDone = !!done[key];
 
-                return `
-                <div class="ex-row ${isDone ? 'done' : ''} ${(!editMode && link) ? 'clickable' : ''}" 
-                     onclick="if(!editMode && '${link}') window.open('${link}', '_blank')">
-                    <input type="checkbox" class="complete-check" ${isDone ? 'checked' : ''} 
-                           onclick="event.stopPropagation(); toggleDone('${key}')">
-                    <div class="ex-name">
-                        ${link ? `<span style="border-bottom:1px dashed #666">${ex.name}</span>` : `<span>${ex.name}</span>`}
-                        <small>${ex.note}</small>
-                        ${editMode ? `<input class="link-input" style="width:100%; margin-top:5px; background:#000; color:#fff; border:1px solid #444; padding:4px;" placeholder="Paste demo link..." value="${link}" oninput="saveLink('${key}', this.value)" onclick="event.stopPropagation()">` : ''}
-                    </div>
-                    <div class="pill beg">${ex.beg}</div>
-                    <div class="pill int">${ex.int}</div>
-                    <div class="pill adv">${ex.adv}</div>
-                </div>`;
-            }).join('');
+            return `
+            <div class="ex-row ${isDone ? 'done' : ''} ${(!editMode && link) ? 'clickable' : ''}" 
+                 onclick="if(!editMode && '${link}') window.open('${link}', '_blank')">
+                <input type="checkbox" class="complete-check" ${isDone ? 'checked' : ''} 
+                       onclick="event.stopPropagation(); toggleDone('${key}')">
+                <div class="ex-name">
+                    ${link ? `<span style="border-bottom:1px dashed #666; color:var(--fire)">${ex.name}</span>` : `<span>${ex.name}</span>`}
+                    <small>${ex.note}</small>
+                    ${editMode ? `<input class="link-input" style="width:100%; margin-top:5px; background:#000; color:#fff; border:1px solid #444; padding:4px;" placeholder="Paste demo link..." value="${link}" oninput="saveLink('${key}', this.value)" onclick="event.stopPropagation()">` : ''}
+                </div>
+                <div class="pill beg">${ex.beg}</div>
+                <div class="pill int">${ex.int}</div>
+                <div class="pill adv">${ex.adv}</div>
+            </div>`;
+        }).join('');
 
-            card.innerHTML = `
-                <div class="week-header"><div class="week-title">WEEK ${week.num}: ${week.theme}</div></div>
-                <div class="col-header"><span></span><span>Exercise</span><span>BEG</span><span>INT</span><span>ADV</span></div>
-                <div class="exercises">${rowsHtml}</div>`;
-            grid.appendChild(card);
-        });
+        card.innerHTML = `
+            <div class="week-header"><div class="week-title">WEEK ${week.num}: ${week.theme}</div></div>
+            <div class="col-header"><span></span><span>Exercise</span><span>BEG</span><span>INT</span><span>ADV</span></div>
+            <div class="exercises">${rowsHtml}</div>`;
+        grid.appendChild(card);
+    });
+
 
         document.getElementById('progressText').textContent = Math.round((completedEx/totalEx)*100) + "%";
     }
