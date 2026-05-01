@@ -75,13 +75,29 @@
 
         .toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: #333; color: #fff; padding: 10px 20px; border-radius: 10px; opacity: 0; pointer-events: none; transition: .3s; z-index: 100; }
         .toast.show { opacity: 1; }
+
+        .page-footer-bottom {
+        text-align: center;
+        margin-top: 60px;
+        padding: 40px 20px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        }
+
+        .page-footer-bottom strong {
+        color: var(--fire); /* This uses your theme's orange color for the name */
+        }
+
     </style>
 </head>
 <body>
 
     <div class="page-header">
-        <h1>8-Week Challenge</h1>
-        <p style="color: var(--muted); letter-spacing: 2px; text-transform: uppercase; font-size: 12px;">Track Your Progress · Level Up</p>
+        <h1>8-Week Challenge Minis</h1>
+        <p style="color: var(--muted); letter-spacing: 2px; text-transform: uppercase; font-size: 12px;">Form over Level · Level Up · Focus · Don't Cheat · Push Yourself</p>
     </div>
 
     <div class="progress-container">
@@ -106,59 +122,60 @@
 <script>
     const weeks = [
         { num: 1, theme: "Foundation & Movement", exercises: [
-            { name: "Jumping Jacks", note: "or Step Jacks", beg: "80", int: "150", adv: "200", link: "https://musclewiki.com/exercise/cardio-jumping-jacks?model=f" }, 
+            { name: "Jumping Jacks", note: "or Step Jacks beg/Int", beg: "80", int: "150", adv: "200", link: "https://musclewiki.com/exercise/cardio-jumping-jacks?model=f" }, 
             { name: "Bodyweight Squats", note: "", beg: "30", int: "60", adv: "100", link: "https://musclewiki.com/exercise/bodyweight-squat?model=f" },
             { name: "Push-Ups", note: "or Knee Push-Ups", beg: "20", int: "45", adv: "75", link: "https://musclewiki.com/exercise/push-up?model=f" },
-            { name: "Glute Bridges", note: "", beg: "30", int: "60", adv: "100", link: "https://musclewiki.com/exercise/bodyweight-feet-elevated-glute-bridge?model=f" },
-            { name: "Plank Hold", note: "", beg: "40s", int: "75s", adv: "120s", link: "https://musclewiki.com/exercise/forearm-plank?model=f" },
+            { name: "Glute Bridges", note: "Bodyweight or Weights", beg: "30", int: "60", adv: "100", link: "https://musclewiki.com/exercise/bodyweight-feet-elevated-glute-bridge?model=f" },
+            { name: "Plank Hold", note: "Arms or elbows", beg: "40s", int: "75s", adv: "120s", link: "https://musclewiki.com/exercise/forearm-plank?model=f" },
         ]},
         { num: 2, theme: "Core & Cardio", exercises: [
-            { name: "High Knees", note: "each leg", beg: "50", int: "100", adv: "160", link: "https://musclewiki.com/exercise/cardio-knee-taps?model=f" },
-            { name: "Sit-Ups", note: "or Crunches x 2 Reps", beg: "20", int: "30", adv: "50", link: "https://musclewiki.com/exercise/bodyweight-situp?model=f" },
-            { name: "Core Combo", note: "1m Climbers - 30s Planks - 30s Knees to elbows", beg: "3", int: "5", adv: "10", link:"" },
+            { name: "High Knees", note: "each leg", beg: "50", int: "75", adv: "100", link: "https://musclewiki.com/exercise/cardio-knee-taps?model=f" },
+            { name: "Sit-Ups", note: "or Crunches -> Double the Reps", beg: "20", int: "30", adv: "50", link: "https://musclewiki.com/exercise/bodyweight-situp?model=f" },
+            { name: "Core Combo", note: "1m Climbers - 30s Planks - 30s Knees to elbows", beg: "3", int: "5", adv: "7", link:"" },
             { name: "Side Plank", note: "each side", beg: "30s", int: "50s", adv: "80s", link: "https://musclewiki.com/exercise/hand-side-plank?model=f" },
             { name: "In & Out Squats", note: "1 in & 1 Out = 1 Rep", beg: "20", int: "40", adv: "70", link: "https://musclewiki.com/exercise/in-and-out-jump-squat?model=f" },
         ]},
         { num: 3, theme: "Lower Body Focus", exercises: [
             { name: "Side Lunges", note: "each leg", beg: "20", int: "40", adv: "65", link: "https://musclewiki.com/exercise/side-lunges?model=f" },
-            { name: "Wall Sit", note: "", beg: "45s", int: "90s", adv: "150s", link: "https://musclewiki.com/exercise/wall-sit?model=f" },
+            { name: "Wall Sit", note: "80/90 degress", beg: "45s", int: "90s", adv: "150s", link: "https://musclewiki.com/exercise/wall-sit?model=f" },
             { name: "Calf Raises", note: "slow & controlled", beg: "60", int: "100", adv: "160", link: "https://musclewiki.com/exercise/calf-raises?model=f?model=f" },
             { name: "Glutes 3 in 1", note: "each movement - each side", beg: "10", int: "20", adv: "30", link: "https://www.instagram.com/reel/DXErQmyDGvo/?igsh=MTRrZmgyYjhrNmhhZA%3D%3D" },
-            { name: "Step-Ups", note: "use a chair/bench - Weights or not", beg: "20", int: "40", adv: "70", link: "https://musclewiki.com/exercise/kettlebell-step-up?model=f" },
+            { name: "Step-Ups", note: "use a Stairs/bench - Weights or not", beg: "20", int: "40", adv: "70", link: "https://musclewiki.com/exercise/kettlebell-step-up?model=f" },
         ]},
         { num: 4, theme: "Upper Body & Stability", exercises: [
-            { name: "Push-Up Hold", note: "at lowest point", beg: "30s", int: "60s", adv: "90s" },
-            { name: "Triceps Dips", note: "chair, bench or Machine", beg: "25", int: "50", adv: "80", link: "https://musclewiki.com/exercise/bench-dips?model=f?model=f" },
+            { name: "Push-Up Hold", note: "or Squat Holds", beg: "30s", int: "60s", adv: "90s" },
+            { name: "Triceps Dips", note: "chair, bench or Machine", beg: "25", int: "50", adv: "100", link: "https://musclewiki.com/exercise/bench-dips?model=f?model=f" },
             { name: "Incline Push-Ups", note: "Or decline", beg: "20", int: "40", adv: "65", link: "https://musclewiki.com/exercise/incline-push-up?model=f?model=f" },
-            { name: "Shoulder Taps", note: "in plank", beg: "30", int: "60", adv: "100" },
-            { name: "Dead Bug", note: "slow & controlled", beg: "20", int: "40", adv: "65" },
+            { name: "Shoulder Taps", note: "in plank - Each side", beg: "30", int: "60", adv: "100", link: "https://youtu.be/yyFBdDj7EbQ?si=PncNErBXeT2llXEa" },
+            { name: "Bird Dog", note: "slow & controlled - Each Side", beg: "15", int: "30", adv: "60", link: "https://musclewiki.com/exercise/bird-dog?model=f" },
         ]},
         { num: 5, theme: "Conditioning & Endurance", exercises: [
-            { name: "Burpees", note: "no push-up for beg.", beg: "15", int: "30", adv: "55" },
-            { name: "Jump Rope", note: "or imaginary", beg: "2min", int: "4min", adv: "6min" },
-            { name: "Bear Crawl", note: "fwd + back = 1", beg: "45s", int: "75s", adv: "120s" },
-            { name: "Squat Pulses", note: "", beg: "40", int: "70", adv: "110" },
-            { name: "Hollow Hold", note: "or Tuck Hold", beg: "30s", int: "60s", adv: "100s" },
+            { name: "Burpees", note: "no push-up or Jump for beg/Int.", beg: "10", int: "25", adv: "40", link: "https://musclewiki.com/exercise/burpee" },
+            { name: "Jump Rope", note: "or imaginary", beg: "2min", int: "4min", adv: "6min", link: "https://musclewiki.com/exercise/jump-rope?model=f" },
+            { name: "Bear Crawl", note: "fwd + back = 1", beg: "45s", int: "75s", adv: "120s", link: "https://youtu.be/U3Y58Kyw7Xw" },
+            { name: "Cardio In & Outs", note: "Steps for beg", beg: "40", int: "70", adv: "110", link:"https://musclewiki.com/exercise/cardio-in-and-outs?model=f?model=f"},
+            { name: "Hollow Hold", note: "or Tuck Hold", beg: "30s", int: "60s", adv: "100s", link: "https://musclewiki.com/exercise/hollow-hold?model=f" },
         ]},
         { num: 6, theme: "Core Control", exercises: [
-            { name: "Russian Twists", note: "add weight if able", beg: "40", int: "80", adv: "130" },
-            { name: "Leg Raises", note: "lying flat", beg: "20", int: "45", adv: "75" },
-            { name: "Plank Up-Downs", note: "elbow to hand", beg: "15", int: "30", adv: "50" },
-            { name: "Superman Hold", note: "", beg: "45s", int: "75s", adv: "120s" },
+            { name: "Russian Twists", note: "add weight if able", beg: "40", int: "80", adv: "130", link: "https://musclewiki.com/exercise/dumbbell-russian-twist?model=f?model=f" },
+            { name: "Leg Raises", note: "lying flat", beg: "20", int: "45", adv: "75", link: "https://musclewiki.com/exercise/laying-leg-raises?model=f?model=f" },
+            { name: "Plank Up-Downs", note: "elbow to hand", beg: "15", int: "30", adv: "50", link: "https://musclewiki.com/exercise/bodyweight-plank-up-down?model=f" },
+            { name: "Asian Squad Hold", note: "as low as you can", beg: "45s", int: "75s", adv: "120s", link: "https://www.youtube.com/shorts/b4D0jAQLtkY" },
             { name: "Plank Shoulder Tap to Pushups", note: "or not Pushups", beg: "45s", int: "120s", adv: "180s" },
         ]},
         { num: 7, theme: "Power & Athleticism", exercises: [
-            { name: "Squat Jumps", note: "full depth", beg: "30", int: "55", adv: "90" },
-            { name: "Lateral Skaters", note: "each side", beg: "30", int: "55", adv: "90" },
-            { name: "Push-Up Rotation", note: "T-Rotation", beg: "10", int: "24", adv: "40" },
-            { name: "High-Knee Sprint", note: "in place", beg: "90s", int: "2.5m", adv: "4m" },
-            { name: "Plank Walkouts", note: "standing to plank", beg: "15", int: "30", adv: "50" },
+            { name: "Squat Jumps", note: "or Squat Pulses for beg/int", beg: "30", int: "55", adv: "90", link: "https://musclewiki.com/exercise/jump-squats?model=f?model=f" },
+            { name: "Lateral Skaters", note: "each side", beg: "30", int: "55", adv: "90", link: "https://musclewiki.com/exercise/cardio-skater?model=f?model=f"},
+            { name: "Push-Up w/T-Rotation", note: "Just T-Rotation beg/Int - Each side", beg: "10", int: "24", adv: "40", link: "https://youtu.be/iChMWu10hVc?si=A3gYPHWQgKK4mTfj" },
+            { name: "3 steps Heismans", note: "in place", beg: "90s", int: "2.5m", adv: "4m", link: "https://musclewiki.com/exercise/cardio-three-step-heismans?model=f?model=f" },
+            { name: "Squad-Lunge Combo", note: "Squad, Lunge R-L = 1 Rep", beg: "15", int: "30", adv: "50" },
         ]},
         { num: 8, theme: "Final Challenge Week", final: true, exercises: [
-            { name: "Squats — Max Reps", note: "bodyweight", beg: "100", int: "200", adv: "300" },
-            { name: "Push-Up Challenge", note: "any variation", beg: "60", int: "120", adv: "175" },
-            { name: "Core Finisher", note: "3 of choice", beg: "6min", int: "10min", adv: "14min" },
-            { name: "Burpee Test", note: "record count", beg: "25", int: "55", adv: "85" },
+            { name: "Split Squats - Max Reps", note: "weights or not - each leg", beg: "50", int: "100", adv: "150", link: "https://musclewiki.com/exercise/dumbbell-split-squat?model=f?model=f" },
+            { name: "Push-Up Challenge", note: "any variation", beg: "60", int: "120", adv: "175", link: "https://musclewiki.com/exercise/push-up?model=f" },
+            { name: "Single Leg Romanian DeadLifts", note: "Add weights if possible - each leg", beg: "30", int: "45", adv: "70", link: "https://musclewiki.com/exercise/single-legged-romanian-deadlifts?model=m" },
+            { name: "Core Finisher", note: "3 30s of choice back to back", beg: "5", int: "10", adv: "15" },
+            { name: "Burpees oh yeah", note: "no push-up or Jump for beg/Int", beg: "25", int: "55", adv: "85",  link: "https://musclewiki.com/exercise/burpee" },
             { name: "Wildcard", note: "your hardest move", beg: "5pts", int: "10pts", adv: "15pts" },
         ]}
     ];
@@ -275,6 +292,14 @@
     }
 
     render();
+
+    
 </script>
+
+<footer class="page-footer-bottom">
+  <p>&copy; <span id="year"></span> Latoozatech by <strong>Jonatan Rojas</strong> (The Coach)</p>
+</footer>
+
+
 </body>
 </html>
