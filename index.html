@@ -215,27 +215,31 @@
 
     function render() {
     const grid = document.getElementById('challengeGrid');
-    const localLinks = JSON.parse(localStorage.getItem(STORAGE_LINKS) || "{}"); // Saved in browser
+    const localLinks = JSON.parse(localStorage.getItem(STORAGE_LINKS) || "{}");
     const done = JSON.parse(localStorage.getItem(STORAGE_DONE) || "{}");
     grid.innerHTML = "";
+
+    let totalEx = 0;
+    let completedEx = 0;
 
     weeks.forEach(week => {
         const card = document.createElement('div');
         card.className = 'week-card';
-        
+
         const rowsHtml = week.exercises.map((ex, idx) => {
             const key = getKey(week.num, idx);
-            
-            // FIXED: Look for hardcoded "ex.link" if local storage is empty
-            const link = localLinks[key] || ex.link || ""; 
-            
+            const link = localLinks[key] || ex.link || "";
             const isDone = !!done[key];
+
+            // This calculates the progress
+            totalEx++;
+            if (isDone) completedEx++;
 
             return `
             <div class="ex-row ${isDone ? 'done' : ''} ${(!editMode && link) ? 'clickable' : ''}" 
-                 onclick="if(!editMode && '${link}') window.open('${link}', '_blank')">
-                <input type="checkbox" class="complete-check" ${isDone ? 'checked' : ''} 
-                       onclick="event.stopPropagation(); toggleDone('${key}')">
+            onclick="if(!editMode && '${link}') window.open('${link}', '_blank')">
+                <input type="checkbox" class="complete-check" ${isDone ? 'checked' : ''}
+                onclick="event.stopPropagation(); toggleDone('${key}')">
                 <div class="ex-name">
                     ${link ? `<span style="border-bottom:1px dashed #666; color:var(--fire)">${ex.name}</span>` : `<span>${ex.name}</span>`}
                     <small>${ex.note}</small>
@@ -248,15 +252,17 @@
         }).join('');
 
         card.innerHTML = `
-            <div class="week-header"><div class="week-title">WEEK ${week.num}: ${week.theme}</div></div>
-            <div class="col-header"><span></span><span>Exercise</span><span>BEG</span><span>INT</span><span>ADV</span></div>
-            <div class="exercises">${rowsHtml}</div>`;
+        <div class="week-header"><div class="week-title">WEEK ${week.num}: ${week.theme}</div></div>
+        <div class="col-header"><span></span><span>Exercise</span><span>BEG</span><span>INT</span><span>ADV</span></div>
+        <div class="exercises">${rowsHtml}</div>`;
         grid.appendChild(card);
     });
 
+    // This updates the percentage at the top of the page
+    const percent = totalEx > 0 ? Math.round((completedEx / totalEx) * 100) : 0;
+    document.getElementById('progressText').textContent = percent + "%";
+}
 
-        document.getElementById('progressText').textContent = Math.round((completedEx/totalEx)*100) + "%";
-    }
 
     function saveLink(key, val) {
         const links = JSON.parse(localStorage.getItem(STORAGE_LINKS) || "{}");
