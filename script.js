@@ -1,7 +1,7 @@
 // PART 1: 8-Week Challenge Exercise Definition Array
 const weeks = [
         { num: 1, theme: "Foundation & Movement", exercises: [
-            { name: "Inchworm", note: "", beg: "50", int: "100", adv: "150", link: "https://musclewiki.com/exercise/inchworm?model=f" }, 
+            { name: "Inchworm", note: "", beg: "20", int: "40", adv: "60", link: "https://musclewiki.com/exercise/inchworm?model=f" }, 
             { name: "Sumo Squats", note: "With Weight", beg: "30", int: "60", adv: "100", link: "https://musclewiki.com/exercise/dumbbell-sumo-squat?model=f" },
             { name: "Push-Ups", note: "or Knee Push-Ups", beg: "20", int: "45", adv: "75", link: "https://musclewiki.com/exercise/push-up?model=f" },
             { name: "Glute Bridges", note: "Bodyweight or Weights", beg: "30", int: "60", adv: "100", link: "https://musclewiki.com/exercise/bodyweight-feet-elevated-glute-bridge?model=f" },
@@ -15,7 +15,7 @@ const weeks = [
             { name: "Pop Squats", note: "floor touch = 1", beg: "20", int: "40", adv: "70", link: "https://musclewiki.com/exercise/bodyweight-pop-squat?model=f" },
         ]},
         { num: 3, theme: "Lower Body Focus", exercises: [
-            { name: "BW Curtsy Lunges", note: "each leg", beg: "20", int: "40", adv: "65", link: "https://musclewiki.com/exercise/barbell-curtsy-lunge?model=f" },
+            { name: "BW Curtsy Lunges", note: "each leg", beg: "20", int: "40", adv: "65", link: "https://musclewiki.com/exercise/curtsy-lunge?model=f" },
             { name: "Wall Sit", note: "80/90 degress", beg: "45s", int: "90s", adv: "150s", link: "https://musclewiki.com/exercise/wall-sit?model=f" },
             { name: "Calf Raises", note: "slow & controlled", beg: "60", int: "100", adv: "160", link: "https://musclewiki.com/exercise/calf-raises?model=f?model=f" },
             { name: "Glutes 3 in 1", note: "each movement - each side", beg: "10", int: "20", adv: "30", link: "https://www.instagram.com/reel/DXErQmyDGvo/?igsh=MTRrZmgyYjhrNmhhZA%3D%3D" },
